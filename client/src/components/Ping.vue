@@ -11,7 +11,7 @@ export default {
   name: "Ping",
   data() {
     return {
-      msg: "",
+      msg: "pong!",
     };
   },
   methods: {
@@ -33,4 +33,3 @@ export default {
   },
 };
 </script>
-
