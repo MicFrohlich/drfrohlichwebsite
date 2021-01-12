@@ -1,12 +1,12 @@
 <template>
     <div class="container jumbotron">
-        <h2 class="text-center">Directions</h2>
+        <h2 class="text-center"><u>Directions</u></h2>
         <div class="container">
             <GmapMap
             :center="{lat:-26.038, lng:28.07}"
             :zoom="17"
             map-type-id="terrain"
-            style="width: 350px; height: 300px"
+            class="box"
             >
             <GmapMarker
                 :key="index"

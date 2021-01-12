@@ -3,28 +3,39 @@
         <navbar></navbar>
         <br>
         <transition name="fade">
-          <aboutme v-show='showAboutMe' :class="{'active':show}"></aboutme>
+          <faq v-if='showFAQ' :class="{'animated fadeInDown':showFAQ}"></faq>
         </transition>
         <transition name="fade">
-          <obstetrics v-show='showObstetrics' :class="{'active':show}"></obstetrics>
+          <contactdetails
+            v-if='showContactDetails'
+            :class="{'animated fadeInDown':showContactDetails}"
+          >
+          </contactdetails>
         </transition>
         <transition name="fade">
-          <gynaecology v-show='showGynaecology' :class="{'active':show}"></gynaecology>
+          <feesguidelines
+            v-if='showFeeGuidelines'
+            :class="{'animated fadeInDown':showFeeGuidelines}">
+          </feesguidelines>
         </transition>
         <transition name="fade">
-          <offersandprocedures v-show='showMainInterest' :class="{'active':show}">
+          <offersandprocedures
+            v-if='showMainInterest'
+            :class="{'animated fadeInDown':showMainInterest}">
           </offersandprocedures>
         </transition>
         <transition name="fade">
-          <feesguidelines v-show='showFeeGuidelines' :class="{'active':show}"></feesguidelines>
+          <gynaecology v-if='showGynaecology' :class="{'animated fadeInDown':showGynaecology}">
+          </gynaecology>
+        </transition>
+        <transition name="active">
+          <obstetrics v-if='showObstetrics' :class="{'animated fadeInDown':showObstetrics}">
+          </obstetrics>
+        </transition>
+        <transition name="fade">
+          <aboutme v-if='showAboutMe' :class="{'animated fadeInDown':showAboutMe}"></aboutme>
         </transition>
         <!-- <reviewsandtestimonials></reviewsandtestimonials> -->
-        <transition name="fade">
-          <contactdetails v-show='showContactDetails' :class="{'active':show}"></contactdetails>
-        </transition>
-        <transition name="fade">
-          <faq v-show='showFAQ' :class="{'active':show}"></faq>
-        </transition>
         <div class="row">
           <div class="col-6">
             <directions></directions>
@@ -78,49 +89,49 @@ export default {
   },
   methods: {
     aboutme() {
-      this.showAboutMe = true;
       this.showObstetrics = false;
       this.showGynaecology = false;
       this.showMainInterest = false;
       this.showFeeGuidelines = false;
       this.showContactDetails = false;
       this.showFAQ = false;
+      this.showAboutMe = true;
     },
     obstetrics() {
       this.showAboutMe = false;
-      this.showObstetrics = true;
       this.showGynaecology = false;
       this.showMainInterest = false;
       this.showFeeGuidelines = false;
       this.showContactDetails = false;
       this.showFAQ = false;
+      this.showObstetrics = true;
     },
     gynaecology() {
       this.showAboutMe = false;
       this.showObstetrics = false;
-      this.showGynaecology = true;
       this.showMainInterest = false;
       this.showFeeGuidelines = false;
       this.showContactDetails = false;
       this.showFAQ = false;
+      this.showGynaecology = true;
     },
     maininterest() {
       this.showAboutMe = false;
       this.showObstetrics = false;
       this.showGynaecology = false;
-      this.showMainInterest = true;
       this.showFeeGuidelines = false;
       this.showContactDetails = false;
       this.showFAQ = false;
+      this.showMainInterest = true;
     },
     feeguidelines() {
       this.showAboutMe = false;
       this.showObstetrics = false;
       this.showGynaecology = false;
       this.showMainInterest = false;
-      this.showFeeGuidelines = true;
       this.showContactDetails = false;
       this.showFAQ = false;
+      this.showFeeGuidelines = true;
     },
     contactdetails() {
       this.showAboutMe = false;
@@ -128,8 +139,8 @@ export default {
       this.showGynaecology = false;
       this.showMainInterest = false;
       this.showFeeGuidelines = false;
-      this.showContactDetails = true;
       this.showFAQ = false;
+      this.showContactDetails = true;
     },
     faq() {
       this.showAboutMe = false;
