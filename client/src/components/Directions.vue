@@ -1,12 +1,12 @@
 <template>
     <div class="container jumbotron">
-        <a id="directions"><h2>Directions</h2></a>
+        <h2 class="text-center">Directions</h2>
         <div class="container">
             <GmapMap
-            :center="{lat:-26.04, lng:28.07}"
+            :center="{lat:-26.038, lng:28.07}"
             :zoom="17"
             map-type-id="terrain"
-            style="width: 1000px; height: 500px;"
+            style="width: 350px; height: 300px"
             >
             <GmapMarker
                 :key="index"
@@ -17,8 +17,11 @@
                 @click="center=m.position"
             />
             </GmapMap>
+            <hr>
+        <div class="d-flex justify-content-center">
+          <a href="https://goo.gl/maps/ccJngo5UtjuLoJ4n6">Direct Me!</a>
         </div>
-        <p>Addtional Text and Directions</p>
+        </div>
     </div>
 </template>
 <script>
@@ -36,8 +39,8 @@ export default {
         0: {
           full_name: 'Suite 22',
           position: {
-            lat: '-26.03',
-            lng: '28.06',
+            lat: -26.03,
+            lng: 28.06,
           },
         },
       },
